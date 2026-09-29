@@ -2,7 +2,7 @@
 
 All notable changes to `user-presence` will be documented in this file.
 
-## Unreleased
+## 1.0.0 - 2026-09-29
 
 Initial release.
 
