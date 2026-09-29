@@ -1,0 +1,81 @@
+{
+    "name": "syriable/user-presence",
+    "description": "Track user presence (online status, last seen, login activity) and local context (locale, timezone, location) in Laravel applications.",
+    "keywords": [
+        "syriable",
+        "laravel",
+        "user-presence",
+        "online-status",
+        "last-seen",
+        "timezone",
+        "locale"
+    ],
+    "homepage": "https://github.com/syriable/user-presence",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Syriable",
+            "email": "alkhatib.syr@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "illuminate/contracts": "^13.0",
+        "illuminate/database": "^13.0",
+        "illuminate/http": "^13.0",
+        "illuminate/support": "^13.0",
+        "spatie/laravel-package-tools": "^1.93"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.12",
+        "laravel/pint": "^1.32",
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^5.0",
+        "pestphp/pest-plugin-arch": "^5.0",
+        "pestphp/pest-plugin-laravel": "^5.0",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "rector/rector": "^2.6"
+    },
+    "suggest": {
+        "ext-intl": "Derives country names from ISO country codes when a location provider does not supply one."
+    },
+    "autoload": {
+        "psr-4": {
+            "Syriable\\UserPresence\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Syriable\\UserPresence\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint",
+        "refactor": "vendor/bin/rector process"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Syriable\\UserPresence\\UserPresenceServiceProvider"
+            ],
+            "aliases": {
+                "UserPresence": "Syriable\\UserPresence\\Facades\\UserPresence"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
